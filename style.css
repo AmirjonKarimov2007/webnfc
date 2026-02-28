@@ -1,0 +1,219 @@
+/* ========= Google Fonts ========= */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+/* ========= CSS Variables ========= */
+:root {
+    --bg-gradient-start: #0a0b1e;
+    --bg-gradient-end: #0f122e;
+    --spotlight-color: rgba(69, 78, 163, 0.3);
+    --text-primary: #e4e4e7;
+    --text-secondary: #a1a1aa;
+    --card-bg-color: rgba(30, 33, 62, 0.35);
+    --card-border-color: rgba(255, 255, 255, 0.1);
+    --glow-color: rgba(124, 93, 250, 0.4);
+    --button-gradient-start: #5a3fc0;
+    --button-gradient-end: #7b61ff;
+    --white-color: #FFFFFF;
+}
+
+/* ========= Base Styles ========= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    color: var(--text-primary);
+    background-color: var(--bg-gradient-end);
+    background-image: 
+        radial-gradient(at 50% 0%, var(--spotlight-color) 0%, transparent 50%),
+        radial-gradient(at 50% 100%, var(--bg-gradient-start) 0%, var(--bg-gradient-end) 100%);
+    background-size: 200% 200%;
+    animation: subtle-gradient 15s ease-in-out infinite;
+    display: flex;
+    justify-content: center;
+    align-items: center; /* Center container vertically */
+    min-height: 100vh;
+    padding: 20px;
+    overflow: hidden; /* Prevent scrolling */
+}
+
+.container {
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 20px; /* Reduced gap for non-scrolling layout */
+    max-height: 100%;
+}
+
+/* ========= Profile Section ========= */
+.profile-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px; /* Reduced gap */
+}
+
+.profile-image-container {
+    width: 120px; /* Slightly smaller */
+    height: 120px;
+    border-radius: 50%;
+    padding: 4px;
+    background: linear-gradient(45deg, var(--button-gradient-start), var(--button-gradient-end));
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.25), 0 0 40px -10px var(--glow-color);
+}
+
+.profile-image-container img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    border: 3px solid var(--bg-gradient-start);
+    object-fit: cover;
+}
+
+.profile-name {
+    font-size: 26px; /* Slightly smaller */
+    font-weight: 600;
+    color: var(--white-color);
+    letter-spacing: -0.5px;
+}
+
+.profile-subtitle {
+    font-size: 15px; /* Slightly smaller */
+    font-weight: 400;
+    color: var(--text-secondary);
+}
+
+/* ========= About Section ========= */
+.about-card {
+    background-color: var(--card-bg-color);
+    border: 1px solid var(--card-border-color);
+    border-radius: 18px; /* Consistent radius */
+    padding: 20px; /* Reduced padding */
+    text-align: left;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.25);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+
+.about-card h2 {
+    font-size: 13px; /* Slightly smaller */
+    font-weight: 600;
+    color: var(--text-secondary);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 8px; /* Reduced margin */
+}
+
+.about-card p {
+    font-size: 14px; /* Slightly smaller */
+    line-height: 1.5;
+    color: var(--text-primary);
+}
+
+/* ========= Social Links Section ========= */
+.social-links-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* 2-column grid */
+    gap: 12px; /* Reduced gap */
+}
+
+.social-button {
+    display: flex;
+    align-items: center;
+    padding: 12px; /* Reduced padding */
+    text-decoration: none;
+    color: var(--text-primary);
+    background-color: var(--card-bg-color);
+    border: 1px solid var(--card-border-color);
+    border-radius: 15px;
+    font-size: 14px; /* Slightly smaller */
+    font-weight: 500;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+}
+
+.social-button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2), 0 0 25px -5px var(--glow-color);
+}
+
+.social-button i {
+    font-size: 22px; /* Slightly smaller */
+    margin-right: 10px; /* Reduced margin */
+    width: 22px; 
+    text-align: center;
+}
+
+.social-button.full-width {
+    grid-column: span 2; /* Restore full-width capability */
+    justify-content: center;
+}
+
+/* ========= CTA Section ========= */
+.cta-button {
+    display: inline-block;
+    width: 100%;
+    padding: 16px; /* Reduced padding */
+    background-image: linear-gradient(45deg, var(--button-gradient-start), var(--button-gradient-end));
+    color: var(--white-color);
+    text-decoration: none;
+    font-size: 15px; /* Slightly smaller */
+    font-weight: 600;
+    border-radius: 15px;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.25), 0 0 40px -10px var(--glow-color);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.cta-button:hover {
+    transform: scale(1.03);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25), 0 0 35px var(--glow-color);
+}
+
+/* ========= Animations ========= */
+@keyframes subtle-gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* ========= Responsive Design ========= */
+@media (min-width: 768px) {
+    body {
+        padding: 60px 20px;
+    }
+    
+    .container {
+        max-width: 480px;
+        gap: 40px;
+    }
+
+    .profile-image-container {
+        width: 150px;
+        height: 150px;
+    }
+
+    .profile-name {
+        font-size: 32px;
+    }
+
+    .profile-subtitle {
+        font-size: 18px;
+    }
+
+    .about-card, .social-button, .cta-button {
+        border-radius: 18px;
+    }
+}
